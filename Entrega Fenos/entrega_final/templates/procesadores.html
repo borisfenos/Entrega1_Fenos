@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Procesadores
+{% endblock %}
+
+{% block contenido %}
+<h1 style="margin-left:30rem">Listado de procesadores</h1>
+
+{{message}}
+
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for procesador in procesadores %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{procesador.name}}</h5>
+            <p class="card-text">{{procesador.description}}</p>
+            <p class="card-text">{{procesador.price}}</p>
+            <a href="/procesadores/detail-procesador/{{procesador.id}}/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

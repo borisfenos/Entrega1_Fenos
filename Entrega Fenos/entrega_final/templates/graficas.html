@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Graficas
+{% endblock %}
+
+{% block contenido %}
+<h1 style="margin-left:30rem">Listado de placas gráficas</h1>
+
+{{message}}
+
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for grafica in graficas %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{grafica.name}}</h5>
+            <h5 class="card-title">{{grafica.memory}}</h5>
+            <p class="card-text">{{grafica.description}}</p>
+            <p class="card-text">{{grafica.price}}</p>
+            <a href="/graficas/detail-grafica/{{grafica.id}}/" class="btn btn-primary">Ver mas!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
